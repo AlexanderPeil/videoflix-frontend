@@ -7,14 +7,35 @@
         </div>
     </div>
 
-    <form class="loginSignupForm">
-        <h2>Login</h2>
+    <!-- Sign up form -->
+    <form class="loginSignupForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <h2>Signup</h2>
         <div class="inputContainer">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm password">
+
+            <!-- Username section -->
+            <input type="text" placeholder="Username" formControlName="username">
+            <div *ngIf="submitted && signUpForm.get('username')?.errors?.['required']" class="warning">
+                Please enter your firstname.
+            </div>
+
+            <!-- Email section -->
+            <input type="email" placeholder="Email" formControlName="email">
+            <div *ngIf="submitted && signUpForm.get('email')?.errors?.['required']" class="warning">
+                Please enter your email.
+            </div>
+
+            <!-- Password section -->
+            <input type="password" placeholder="Password" formControlName="password">
+            <div *ngIf="submitted && signUpForm.get('password')?.errors?.['required']" class="warning">
+                Please enter a password.
+            </div>
+
+            <!-- Confirm passsword section -->
+            <input type="password" placeholder="Confirm password" formControlName="confirmPassword">
+            <div class="warning" *ngIf="signUpForm.errors?.['notSame'] && signUpForm.get('confirmPassword')?.touched">Passwords do not
+                match.</div>
         </div>
-        <button>Signup</button>
+        <button [disabled]="isButtonDisabled">Signup</button>
+        <span *ngIf="signedUpInfo" class="success">Signed up succesfully </span>
     </form>
 </div>
