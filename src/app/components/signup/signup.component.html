@@ -1,4 +1,20 @@
-<div>
-    <h1>Videoflix</h1>
-    <button routerLink="/login">Login</button>
+<div class="signupMainContainer">
+    <div class="signupHeader">
+        <h1>Videoflix</h1>
+        <div class="loginLinkContainer">
+            You already have an account?
+            <button routerLink="/login">Login</button>
+        </div>
+    </div>
+
+    <form class="loginSignupForm">
+        <h2>Login</h2>
+        <div class="inputContainer">
+            <input type="text" placeholder="Username">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm password">
+        </div>
+        <button>Signup</button>
+    </form>
 </div>

@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import "app/shared/variables.scss";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+
+// Login and signup style
+.loginSignupMainContent {
+    @include flex_center;
+    @include width_height(100%, 100vh);
+}
+
+.loginSignupForm {
+    @include column_center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 40px;
+    width: 300px;
+
+    button {
+        width: 100%;
+    }
+}
+
+.inputContainer {
+    @include column_center;
+    gap: 10px;
+    width: 100%;
+
+    input {
+        padding: 10px;
+        width: 91%;
+    }
+}
+
+button {
+    @include button_hover;
+    color: white;
+    background: $main_color;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: rgb(193,17,25);
+    }
+}

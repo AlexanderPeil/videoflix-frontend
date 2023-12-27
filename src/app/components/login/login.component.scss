@@ -1,10 +1,5 @@
 @import "../../shared/variables.scss";
 
-.mainContent {
-    @include flex_center;
-    @include width_height(100%, 100vh);
-}
-
 h1 {
     position: absolute;
     top: 2%;
@@ -15,36 +10,6 @@ h1 {
 h2 {
     margin: 0 auto 0 0;
     color: white;
-}
-
-form {
-    @include column_center;
-    gap: 20px;
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-    padding: 40px;
-    width: 300px;
-
-    button {
-        @include button_hover;
-        color: white;
-        background: $main_color;
-        width: 100%;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-    }
-}
-
-.inputContainer {
-    @include column_center;
-    gap: 10px;
-    width: 100%;
-
-    input {
-        padding: 10px;
-        width: 91%;
-    }
 }
 
 section {
@@ -60,7 +25,7 @@ section {
     }
 }
 
-.signupContainer {
+.signupLinkContainer {
     margin-right: auto;
     color: #b3b3b3;
 
