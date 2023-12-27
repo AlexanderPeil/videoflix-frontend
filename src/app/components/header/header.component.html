@@ -1,12 +1,20 @@
-<div>
+<div class="headerMainContainer">
     <h1>Videoflix</h1>
     <div>
         <a routerLink="/browse">Start</a>
         <a href="/films">Films</a>
         <a href="/watchlist">Watchlist</a>
     </div>
-    <div>
+    <div class="headerRightContent">
         <input type="search" placeholder="Search">
-        <button>Dropdown-Menu</button>
+        <div class="logoutContainer" mat-button [matMenuTriggerFor]="menu" title="Open menu">
+            <img src="/assets/img/arrowDown.png" alt="">
+        </div>
+        <mat-menu class="logoutMenu" #menu="matMenu">
+            <button mat-menu-item routerLink="/help-page"><span>Help</span></button>
+            <button mat-menu-item routerLink="/privacy-policy"><span>Privacy policy</span></button>
+            <button mat-menu-item routerLink="/legal-notice"><span>Legal notice</span></button>
+            <button mat-menu-item (click)="onLogout()"><span>Log out</span></button>
+        </mat-menu>
     </div>
 </div>
